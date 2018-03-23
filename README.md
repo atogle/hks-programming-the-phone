@@ -18,7 +18,7 @@ An introduction to telelphony programming for government using [Twilio](https://
 - [Download workshop source files](https://github.com/opengovfoundation/hks-programming-the-phone/).
 
 
-## Get started
+## 1. Get started
 - hello world (local and ngrok access)
 
 `npm install --save express`
@@ -29,14 +29,13 @@ Set up simple web server
   - Access locally
   - Access with ngrok
 
-## Answer the phone
-### TwiML
+## 2. Answer the phone with TwiML
 - twiml hello world
 
-### Code
+## 4. Answer the phone with code
 - Twilio api hello world
 
-## Gather input
+## 4. Gather input
 ### name
 - voice gather
 
@@ -46,9 +45,9 @@ Set up simple web server
 ### message
 - voice gather
 
-## Save input
+## 5. Save input
 - Use query string
 
-## Validate input
+## 6. Validate input
 - leave message if constituent
 - send to house.gov if not a constituent
