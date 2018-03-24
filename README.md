@@ -19,35 +19,22 @@ An introduction to telephony programming for government using [Twilio](https://t
 
 
 ## 1. Get started
-- hello world (local and ngrok access)
+- [Set up your project and install Express.](https://expressjs.com/en/starter/installing.html)
+- [Set up simple web server using Express.](https://github.com/atogle/hks-programming-the-phone/blob/master/1-getting-started/index.js)
 
-`npm install --save express`
-Create `index.js`
-
-Set up simple web server
-
-  - Access locally
-  - Access with ngrok
+- Access locally at http://localhost:3000 and publicly with ngrok.
 
 ## 2. Answer the phone with TwiML
-- twiml hello world
+- [Update web server to return raw TwiML.](https://github.com/atogle/hks-programming-the-phone/blob/master/2-answer-the-phone-twiml/index.js)
 
-## 4. Answer the phone with code
-- Twilio api hello world
+## 3. Answer the phone with code
+- [Update web server to return TwiML via the Twilio JavaScript API.](https://github.com/atogle/hks-programming-the-phone/blob/master/3-answer-the-phone-code/index.js)
 
 ## 4. Gather input
-### name
-- voice gather
-
-### zip code
-- dtmf gather
-
-### message
-- voice gather
+- [Gather name, zip code, and message.](https://github.com/atogle/hks-programming-the-phone/blob/master/4-gather-input/index.js)
 
 ## 5. Save input
-- Use query string
+- [Use query string to save input.](https://github.com/atogle/hks-programming-the-phone/blob/master/5-save-input/index.js)
 
 ## 6. Confirm constituent
-- leave message if constituent
-- send to house.gov if not a constituent
+- [Leave message if caller is a constituent. Otherwise, refer caller to house.gov to identify their representative.](https://github.com/atogle/hks-programming-the-phone/blob/master/6-confirm-constituent/index.js)
