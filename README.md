@@ -48,6 +48,6 @@ Set up simple web server
 ## 5. Save input
 - Use query string
 
-## 6. Validate input
+## 6. Confirm constituent
 - leave message if constituent
 - send to house.gov if not a constituent
