@@ -4,6 +4,8 @@ const express = require('express');
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const app = express();
 
+const REP_NAME = 'Aaron Ogle';
+
 app.get('/', (req, res) => {
   const twiml = new VoiceResponse();
 
@@ -11,7 +13,9 @@ app.get('/', (req, res) => {
     {
       voice: 'woman',
     },
-    'Hello world!'
+    `Thank you for calling the office of Representative ${REP_NAME}.
+    The office is currently closed. Your opinion is very important, so please stay on the line to leave a message.
+    I will now ask your name and zip code so that I have everything I need to properly record your message.`
   );
 
   res.type('text/xml');

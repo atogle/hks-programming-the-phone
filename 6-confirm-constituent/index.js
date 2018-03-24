@@ -4,8 +4,10 @@ const express = require('express');
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const app = express();
 
-const ZIP_DISTRICTS = require('./zip-districts.json');
+const REP_NAME = 'Aaron Ogle';
 const MY_DISTRICT = 'HPA02';
+const ZIP_DISTRICTS = require('./zip-districts.json');
+
 
 app.use((req, res, next) => {
   req.callState = JSON.parse(req.query.state || '{}');
@@ -22,7 +24,7 @@ app.get('/welcome', (req, res) => {
   twiml.say({
       voice: 'woman',
     },
-    `Thank you for calling the office of Representative Aaron Ogle.
+    `Thank you for calling the office of Representative ${REP_NAME}.
     The office is currently closed. Your opinion is very important, so please stay on the line to leave a message.
     I will now ask your name and zip code so that I have everything I need to properly record your message.`
   );
@@ -92,7 +94,7 @@ app.get('/confirm-constituent', (req, res) => {
     //NOT CONSTITUENT! :(
     twiml.redirect({
       method: 'GET'
-    }, addCallState('/nonconstituent', req.callState));
+    }, addCallState('/nonconstituent-end', req.callState));
   }
 
   res.type('text/xml');
@@ -122,7 +124,7 @@ app.get('/message', (req, res) => {
 });
 
 
-app.get('/nonconstituent', (req, res) => {
+app.get('/nonconstituent-end', (req, res) => {
   const twiml = new VoiceResponse();
   twiml.say({
       voice: 'woman',
@@ -130,7 +132,7 @@ app.get('/nonconstituent', (req, res) => {
     `Aaron Ogle does not represent zip code ${req.callState.zip}. Please visit house dot gov,
     slash representatives, slash find, to get the contact information for your representative.
 
-    Thank you for calling the office of Representative Aaron Ogle. Goodbye.`
+    Thank you for calling the office of Representative ${REP_NAME}. Goodbye.`
   );
   twiml.hangup();
 
@@ -147,7 +149,7 @@ app.get('/end', (req, res) => {
   twiml.say({
       voice: 'woman',
     },
-    'Thank you for calling the office of Representative Aaron Ogle. Goodbye.'
+    `Thank you for calling the office of Representative ${REP_NAME}. Goodbye.`
   );
   twiml.hangup();
 
@@ -156,6 +158,6 @@ app.get('/end', (req, res) => {
 });
 
 
-app.listen(3001, () => {
-  console.log('App listening at http://localhost:3001.');
+app.listen(3000, () => {
+  console.log('App listening at http://localhost:3000.');
 });
