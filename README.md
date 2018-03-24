@@ -1,6 +1,6 @@
 # Programming the Phone
 
-An introduction to telelphony programming for government using [Twilio](https://twilio.com). This primer was created for a [Technology & Democracy Workshop](https://ash.harvard.edu/event/technology-democracy-workshop-programming-phone) at the Ash Center of the Harvard Kennedy School of Government on March 27, 2018.
+An introduction to telephony programming for government using [Twilio](https://twilio.com). This primer was created for a [Technology & Democracy Workshop](https://ash.harvard.edu/event/technology-democracy-workshop-programming-phone) at the Ash Center of the Harvard Kennedy School of Government on March 27, 2018.
 
 ## Prerequisites
 - Familiarity with command-line interfaces.
