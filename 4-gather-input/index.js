@@ -40,7 +40,6 @@ app.get('/name', (req, res) => {
     },
     `Please say your name, followed by the pound sign.`
   );
-  gather.play('https://s3.amazonaws.com/articleone-ivr-tester-audio-dev/custom/beep.wav');
 
   res.type('text/xml');
   res.send(twiml.toString());
@@ -81,7 +80,6 @@ app.get('/message', (req, res) => {
     },
     'Thank you! Please leave your message at the tone.'
   );
-  gather.play('https://s3.amazonaws.com/articleone-ivr-tester-audio-dev/custom/beep.wav');
 
   res.type('text/xml');
   res.send(twiml.toString());
